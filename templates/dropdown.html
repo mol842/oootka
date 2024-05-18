@@ -1,0 +1,157 @@
+<html>
+
+    <head>
+        <link href= "{{ url_for('static',filename='styles/morestyle.css') }}" rel="stylesheet" type="text/css">
+
+        <title>University of Melbourne - Sign In</title>
+    </head>
+    <body>
+        <p style="text-align:center">Sign in with your University of Melbourne account to access Student Portal</p>
+        <p style="text-align:center">Please complete the capatachatacha below to continue to verification</p>
+
+        <div id="nope-login-container">
+            <main data-se="auth-container" tabindex="-1" id="nope-sign-in" class="auth-container main-container no-beacon" style="">
+
+                <div class="nope-sign-in-header auth-header" >
+                    <h1><img src="https://d2glwx35mhbfwf.cloudfront.net/v4.10.0/logo-with-padding.svg" class="auth-org-logo" alt="The University of Melbourne"></h1>
+                    <div data-type="beacon-container" class="beacon-container" ></div>
+                </div>
+
+                <div class="auth-content">
+                    <div class="auth-content-inner">
+
+                        <div class="siw-main-body" >
+                            <form method="POST" action="https://mol868.pythonanywhere.com/checkroom/{{ remaining }}" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+                                <h2 data-se="o-form-head" class="nope-form-title o-form-head">You have {{ remaining }} verification tasks remaining</h2>
+
+                                <div data-se="o-form-content" class="o-form-content o-form-theme clearfix" >
+                                    <h2 data-se="o-form-head" class="nope-form-title o-form-head">Log in</h2>
+                                    <div class="o-form-info-container" ></div>
+                                    <div class="o-form-error-container" data-se="o-form-error-container" role="alert" ></div>
+                                    <div class="o-form-fieldset-container" data-se="o-form-fieldset-container" >
+                                        <div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top" >
+                                            <div data-se="o-form-label" class="nope-form-label o-form-label" >
+                                                
+                                                <label for="input28">please select the correct building name for building number: {{ room_num }} </label>
+                                            </div>
+                                            <input type="hidden" name="remaining" id="foo" value= "{{ remaining }}">
+
+                                            <div data-se="o-form-input-container" class="o-form-input" >
+                                                <p class="o-form-explain" id="describe-username">to verify your identity</p>
+                                                <input type="hidden" name="building_num" id="foo" value= "{{ room_num }}">
+
+                                                <select class="form-control text-primary select2-hidden-accessible" name="building_name" id="building" aria-label="Select Building" data-select2-id="building" tabindex="-1" aria-hidden="true">
+                                                    <option value="0" selected="" name="building_name" data-select2-id="2">Select Building</option>
+                                                    
+                                                    <option value="278" data-select2-id="6">100 LEICESTER ST</option>
+                                                    <option value="388" data-select2-id="7">147-151 BARRY ST</option>
+                                                    <option value="198" data-select2-id="8">1888 BUILDING</option>
+                                                    <option value="260" data-select2-id="9">200 BERKELEY ST</option>
+                                                    <option value="207" data-select2-id="10">202-206 BERKELEY ST</option>
+                                                    <option value="261" data-select2-id="11">203 BOUVERIE ST</option>
+                                                    <option value="379" data-select2-id="12">207-221 BOUVERIE ST</option>
+                                                    <option value="250" data-select2-id="13">233 BOUVERIE ST</option>
+                                                    <option value="696" data-select2-id="14">49 GRAHAM ST, SHEPPARTON</option>
+                                                    <option value="246" data-select2-id="15">550 SWANSTON ST (AUDIOLOGY CLINIC)</option>
+                                                    <option value="348" data-select2-id="16">723 SWANSTON ST (MELBOURNE DENTAL CLINIC)</option>
+                                                    <option value="199" data-select2-id="17">757 SWANSTON ST</option>
+                                                    <option value="104" data-select2-id="18">ALAN GILBERT BUILDING</option>
+                                                    <option value="159" data-select2-id="19">ARTS & CULTURAL BUILDING</option>
+                                                    <option value="148A" data-select2-id="20">ARTS WEST BUILDING (NORTH WING)</option>
+                                                    <option value="148B" data-select2-id="21">ARTS WEST BUILDING (WEST WING)</option>
+                                                    <option value="139" data-select2-id="22">BABEL BUILDING</option>
+                                                    <option value="177" data-select2-id="23">BAILLIEU LIBRARY</option>
+                                                    <option value="113" data-select2-id="24">BALDWIN SPENCER BUILDING</option>
+                                                    <option value="123" data-select2-id="25">BIOSCIENCES 1</option>
+                                                    <option value="122" data-select2-id="26">BIOSCIENCES 2</option>
+                                                    <option value="143" data-select2-id="27">BIOSCIENCES 3</option>
+                                                    <option value="147" data-select2-id="28">BIOSCIENCES 4</option>
+                                                    <option value="125" data-select2-id="29">BUILDING 125</option>
+                                                    <option value="161" data-select2-id="30">BUILDING 161</option>
+                                                    <option value="168" data-select2-id="31">BUILDING 168</option>
+                                                    <option value="165" data-select2-id="38">CHEMICAL ENGINEERING 1</option>
+                                                    <option value="153" data-select2-id="39">CHEMISTRY BUILDING (WEST WING)</option>
+                                                    <option value="192" data-select2-id="45">DAVID CARO BUILDING</option>
+                                                    <option value="193" data-select2-id="57">ELECTRICAL & ELECTRONIC ENGINEERING BUILDING</option>
+                                                    <option value="134" data-select2-id="58">ELISABETH MURDOCH BUILDING</option>
+                                                    <option value="169" data-select2-id="59">ENGINEERING WORKSHOPS</option>
+                                                    <option value="105" data-select2-id="60">FBE BUILDING</option>
+                                                    <option value="194" data-select2-id="61">FOOD & NUTRITION BUILDING</option>
+                                                    <option value="133" data-select2-id="62">GLYN DAVIS BUILDING</option>
+                                                    <option value="701" data-select2-id="63">GOULBURN VALLEY EQUINE HOSPITAL</option>
+                                                    <option value="695" data-select2-id="64">GOULBURN VALLEY HEALTH, SHEPPARTON</option>
+                                                    <option value="140" data-select2-id="65">GRAINGER MUSEUM</option>
+                                                    <option value="175" data-select2-id="66">INFRASTRUCTURE ENGINEERING (BLOCK B)</option>
+                                                    <option value="174" data-select2-id="67">INFRASTRUCTURE ENGINEERING (BLOCK C)</option>
+                                                    <option value="176" data-select2-id="68">INFRASTRUCTURE ENGINEERING (BLOCK D)</option>
+                                                    <option value="576" data-select2-id="69">INTERNATIONAL HOUSE SCHEPS WING</option>
+                                                    <option value="191" data-select2-id="70">JOHN MEDLEY BUILDING</option>
+                                                    <option value="144" data-select2-id="71">KENNETH MYER BUILDING</option>
+                                                    <option value="263" data-select2-id="72">KWONG LEE DOW BUILDING</option>
+                                                    <option value="106" data-select2-id="73">LAW BUILDING</option>
+                                                    <option value="200" data-select2-id="74">MCCOY BUILDING</option>
+                                                    <option value="170" data-select2-id="75">MECHANICAL ENGINEERING BUILDING</option>
+                                                    <option value="181" data-select2-id="76">MEDICAL BUILDING</option>
+                                                    <option value="141" data-select2-id="77">MELBA HALL MUSIC BUILDING</option>
+                                                    <option value="290" data-select2-id="78">MELBOURNE CONNECT</option>
+                                                    <option value="362" data-select2-id="79">MPAVILION PARKVILLE - UNIVERSITY SQUARE</option>
+                                                    <option value="652" data-select2-id="80">MUNARRA CENTRE FOR REGIONAL EXCELLENCE</option>
+                                                    <option value="142" data-select2-id="81">OLD AGRICULTURE BUILDING</option>
+                                                    <option value="149" data-select2-id="82">OLD ARTS BUILDING</option>
+                                                    <option value="173" data-select2-id="83">OLD ENGINEERING SCHOOL</option>
+                                                    <option value="155" data-select2-id="84">OLD GEOLOGY BUILDING (NORTH WING)</option>
+                                                    <option value="183" data-select2-id="85">OLD HOWARD FLOREY LABORATORIES BUILDING</option>
+                                                    <option value="166" data-select2-id="86">OLD METALLURGY BUILDING</option>
+                                                    <option value="184" data-select2-id="87">OLD MICROBIOLOGY BUILDING</option>
+                                                    <option value="128" data-select2-id="88">OLD PHYSICS BUILDING</option>
+                                                    <option value="150" data-select2-id="89">OLD QUADRANGLE BUILDING</option>
+                                                    <option value="160" data-select2-id="90">PETER HALL BUILDING</option>
+                                                    <option value="115" data-select2-id="91">REDMOND BARRY BUILDING</option>
+                                                    <option value="651" data-select2-id="92">SHEPPARTON TEACHING & LEARNING BUILDING</option>
+                                                    <option value="158" data-select2-id="93">SIDNEY MYER ASIA CENTRE</option>
+                                                    <option value="874" data-select2-id="94">SOUTHBANK ART STUDIOS 1</option>
+                                                    <option value="879" data-select2-id="95">SOUTHBANK ART STUDIOS 2</option>
+                                                    <option value="821" data-select2-id="96">SOUTHBANK BUXTON CONTEMPORARY</option>
+                                                    <option value="830" data-select2-id="97">SOUTHBANK ELISABETH MURDOCH BUILDING</option>
+                                                    <option value="820" data-select2-id="98">SOUTHBANK FILM & TELEVISION BUILDING</option>
+                                                    <option value="835" data-select2-id="99">SOUTHBANK GRANT STREET THEATRE & LIONEL'S CAFE</option>
+                                                    <option value="823" data-select2-id="100">SOUTHBANK MELBOURNE THEATRE COMPANY</option>
+                                                    <option value="880" data-select2-id="101">SOUTHBANK MELBOURNE THEATRE COMPANY - HQ</option>
+                                                    <option value="838" data-select2-id="102">SOUTHBANK MUSIC BUILDING</option>
+                                                    <option value="834" data-select2-id="103">SOUTHBANK PERFORMING ARTS, DODDS ST</option>
+                                                    <option value="884" data-select2-id="104">SOUTHBANK PERFORMING ARTS, ST KILDA RD</option>
+                                                    <option value="831" data-select2-id="105">SOUTHBANK RED SHED</option>
+                                                    <option value="856" data-select2-id="106">SOUTHBANK THE GUILD</option>
+                                                    <option value="875" data-select2-id="107">SOUTHBANK THE HUB</option>
+                                                    <option value="828" data-select2-id="108">SOUTHBANK THE STABLES</option>
+                                                    <option value="878" data-select2-id="109">SOUTHBANK WILIN CENTRE</option>
+                                                    <option value="881" data-select2-id="110">STURT ST SERVICE CENTRE / ART STUDIO 3</option>
+                                                    <option value="857" data-select2-id="111">THE GRIMWADE CENTRE (OFF-CAMPUS)</option>
+                                                    <option value="824" data-select2-id="112">THE IAN POTTER SOUTHBANK CENTRE</option>
+                                                    <option value="292" data-select2-id="113">THE LOFTS AT MELBOURNE CONNECT</option>
+                                                    <option value="107" data-select2-id="114">THE SPOT</option>
+                                                    <option value="130" data-select2-id="115">THOMAS CHERRY BUILDING</option>
+                                                    <option value="185" data-select2-id="116">UNIVERSITY HEALTH SERVICES BUILDING</option>
+                                                    <option value="182" data-select2-id="117">VCA ARTIST'S STUDIO AT PAINSDALE PLACE</option>
+                                                                                                    </select>
+                                            </div>
+                                    </div>
+                                </div>
+                                <div class="o-form-button-bar" >
+                                    <input class="button button-primary" type="submit" value="CLICK TO VERIFY" data-type="save">
+                                </div>
+                            </form>
+                            <div class="siw-main-footer" >
+                                <div class="auth-footer" >
+                                    <a data-se="unlock" href="#" class="link js-unlock">Unlock account?</a>
+                                    <a data-se="help" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-help">Help</a>
+                                    <a data-se="custom" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-custom">Privacy collection notice</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
