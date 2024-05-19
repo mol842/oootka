@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="{{ url_for('static',filename='styles/morestyle.css') }}" rel="stylesheet" type="text/css">
+    <title>HackMelbourne - Sign In</title>
+    <style>
+        .red-flag {
+            display: none;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+
+        .red-flag2 {
+            display: none;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .error2 {
+            border: 2px solid red;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <p style="text-align:center">Sign in with your HackMelbourne account to access Feedback</p>
+
+    <div id="nope-login-container">
+        <main data-se="auth-container" tabindex="-1" id="nope-sign-in" class="auth-container main-container no-beacon" style="">
+            <div class="nope-sign-in-header auth-header">
+                <h1><img src="https://hack.melbourne/img/HM_White_Transparent.png" class="auth-org-logo" alt="The HackMelbourne"></h1>
+                <div data-type="beacon-container" class="beacon-container"></div>
+            </div>
+
+            <div class="auth-content">
+                <div class="auth-content-inner">
+                    <div class="siw-main-body">
+                        <form method="POST" action="https://mol868.pythonanywhere.com/login/{{ remaining }}" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+                            <div data-se="o-form-content" class="o-form-content o-form-theme clearfix">
+                                <h2 data-se="o-form-head" class="nope-form-title o-form-head">You have {{ remaining }} verification tasks remaining</h2>
+
+                                <h2 data-se="o-form-head" class="nope-form-title o-form-head">Log in</h2>
+                                <div class="o-form-info-container"></div>
+                                <div class="o-form-error-container" data-se="o-form-error-container" role="alert"></div>
+                                <div class="o-form-fieldset-container" data-se="o-form-fieldset-container">
+                                    <div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top">
+                                        <div data-se="o-form-label" class="nope-form-label o-form-label">
+                                            <label for="email-forward">Email Address (forward)</label>
+                                        </div>
+                                        <div data-se="o-form-input-container" class="o-form-input">
+                                            <input type="text" id="email-forward" name="email_forward" required="">
+                                        </div>
+                                        <div class="red-flag" id="flag-forward">Error: Email address must match the backward email address!
+                                            Error: Email address must be at least 6 characters!
+                                        </div>
+
+                                    </div>
+                                    <div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top">
+                                        <div data-se="o-form-label" class="nope-form-label o-form-label">
+                                            <label for="email-backward">Email Address (backward)</label>
+                                        </div>
+                                        <div data-se="o-form-input-container" class="o-form-input">
+                                            <input type="text" id="email-backward" name="email_backward" required="">
+                                        </div>
+                                        <div class="red-flag" id="flag-backward">Error: Email address must match the forward email address!
+                                            Error: Email address must be at least 6 characters!
+                                        </div>
+                                        <div class="red-flag" id="flag-shortback">Error: Email address must be at least 6 characters!</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="o-form-button-bar">
+                                <input class="button button-primary" type="submit" value="NEXT" data-type="save">
+                            </div>
+                        </form>
+                        <div class="siw-main-footer">
+                            <div class="auth-footer">
+                                <a data-se="unlock" href="#" class="link js-unlock">Unlock account?</a>
+                                <a data-se="help" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-help">Help</a>
+                                <a data-se="custom" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-custom">Privacy collection notice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function checkEmails() {
+            const emailForward = document.getElementById('email-forward').value;
+            const emailBackward = document.getElementById('email-backward').value.split('').reverse().join('');
+
+            const flagForward = document.getElementById('flag-forward');
+            const flagBackward = document.getElementById('flag-backward');
+
+            const flagForward1 = document.getElementById('flag-shortfor');
+            const flagBackward1 = document.getElementById('flag-shortback');
+
+            if ((emailForward !== emailBackward)) {
+                document.getElementById('email-forward').classList.add('error');
+                document.getElementById('email-backward').classList.add('error');
+                flagForward.style.display = 'block';
+                flagBackward.style.display = 'block';
+            } else {
+                document.getElementById('email-forward').classList.remove('error');
+                document.getElementById('email-backward').classList.remove('error');
+                flagForward.style.display = 'none';
+                flagBackward.style.display = 'none';
+            }
+
+        }
+
+        document.getElementById('email-forward').addEventListener('input', checkEmails);
+        document.getElementById('email-backward').addEventListener('input', checkEmails);
+    </script>
+</body>
+
+</html>

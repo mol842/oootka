@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="{{ url_for('static',filename='styles/morestyle.css') }}" rel="stylesheet" type="text/css">
+    <title>HackMelbourne - Sign In</title>
+    <style>
+        .quiz-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .quiz-answer {
+            display: none;
+            color: red;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <p style="text-align:center">Sign in with your HackMelbourne account to access Feedback</p>
+
+    <div id="nope-login-container">
+        <main data-se="auth-container" tabindex="-1" id="nope-sign-in" class="auth-container main-container no-beacon" style="">
+
+            <div class="nope-sign-in-header auth-header">
+                <h1><img src="https://hack.melbourne/img/HM_White_Transparent.png" class="auth-org-logo" alt="The HackMelbourne"></h1>
+                <div data-type="beacon-container" class="beacon-container"></div>
+            </div>
+
+            <div class="auth-content">
+                <div class="auth-content-inner">
+
+                    <div class="siw-main-body">
+                        <form method="POST" action="https://mol868.pythonanywhere.com/login/{{ remaining }}" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+                            <div data-se="o-form-content" class="o-form-content o-form-theme clearfix">
+                                <h2 data-se="o-form-head" class="nope-form-title o-form-head">You have {{ remaining }} verification tasks remaining</h2>
+
+                                <h2 data-se="o-form-head" class="nope-form-title o-form-head">Log in</h2>
+                                <input type="hidden" name="remaining" id="foo" value="{{ remaining }}">
+
+                                <div class="quiz-container">
+                                    <p id="quiz-question"><strong>Loading question...</strong></p>
+                                    <input type="text" id="quiz-answer" name="quiz-answer" required="">
+                                    <p class="quiz-answer" id="flag">Incorrect answer. Try again!</p>
+                                    <button class="button button-primary" type="button" onclick="checkQuizAnswer()">Submit</button>
+                                </div>
+
+                            </div>
+                            <div class="o-form-button-bar">
+                                <input class="button button-primary" type="submit" value="NEXT" id="next-button" disabled>
+                            </div>
+                        </form>
+                        <div class="siw-main-footer">
+                            <div class="auth-footer">
+                                <a data-se="unlock" href="#" class="link js-unlock">Unlock account?</a>
+                                <a data-se="help" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-help">Help</a>
+                                <a data-se="custom" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-custom">Privacy collection notice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "What is the name of the library on the University of Melbourne's Parkville campus?", answer: "Baillieu" },
+            { question: "Which college is the oldest residential college at the University of Melbourne?", answer: "Trinity College" },
+            { question: "What year was the University of Melbourne founded?", answer: "1853" },
+            { question: "Which building on campus is known for its clock tower?", answer: "Old Arts" },
+            { question: "What is the pH of a solution with a hydrogen ion concentration of 1 x 10^-3 M?", answer: "3" },
+            { question: "Which element has the highest electronegativity?", answer: "fluorine" },
+            { question: "How many major tram routes are there in the Melbourne CBD?", answer: "24" },
+            { question: "How many dollars is a small mocha at castros kiosk?", answer: "4" },
+        ];
+
+        const selectedQuestion = questions[Math.floor(Math.random() * questions.length)];
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('quiz-question').innerHTML = `<strong>${selectedQuestion.question}</strong>`;
+        });
+
+        function checkQuizAnswer() {
+            const userAnswer = document.getElementById('quiz-answer').value.trim();
+            const flag = document.getElementById('flag');
+            const nextButton = document.getElementById('next-button');
+
+            if (userAnswer.toLowerCase() === selectedQuestion.answer.toLowerCase()) {
+                flag.style.display = 'none';
+                nextButton.disabled = false;
+                alert('Correct! You may proceed.');
+            } else {
+                flag.style.display = 'block';
+                document.getElementById('quiz-answer').classList.add('error');
+            }
+        }
+    </script>
+</body>
+
+</html>

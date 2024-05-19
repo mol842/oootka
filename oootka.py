@@ -121,6 +121,14 @@ def room(remaining):
 def bouncy(remaining):
     return render_template("bouncy.html", remaining=remaining)
 
+@app.route('/backwards/<remaining>')
+def backwards(remaining):
+    return render_template("backwards.html", remaining=remaining)
+
+@app.route('/trivia/<remaining>')
+def trivia(remaining):
+    return render_template("trivia.html", remaining=remaining)
+
 
 @app.route('/checkroom/<remaining>', methods=['POST', 'GET'])
 def checkroom(remaining):
