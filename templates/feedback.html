@@ -78,22 +78,46 @@
         .verify-button:hover {
             background-color: #0056b3;
         }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%; /* Adjust as needed */
+        }
+        img {
+            width: 100px; /* Adjust image size as needed */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove extra space under the image */
+
+        }
+
     </style>
 </head>
 <body>
+
+
+
     <div class="container">
+        <div class="center">
+            <img src="https://hack.melbourne/img/HM_White_Transparent.png" alt="Centered Image">
+        </div>
+        
         <h1>Submit Your Feedback</h1>
         <p>Your feedback is invaluable to us. Please take a moment to share your thoughts and help us improve our work as a club.</p>
-        <form action="/submit_feedback" method="post">
+        <form action="confirmation.html" method="post">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="feedback">Feedback</label>
-                <textarea id="feedback" name="feedback"></textarea>
+                <textarea id="feedback" name="feedback" required></textarea>
             </div>
-            <button type="submit" class="button verify-button">Verify Your Identity to submit feedback</button>
+            <a href="#" class="button verify-button">Verify Your Identity to submit feedback</a>
         </form>
     </div>
 </body>
