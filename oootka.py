@@ -83,7 +83,7 @@ def check():
 
 @app.route('/login/<remaining>', methods=['POST', 'GET'])
 def login(remaining):
-    options = ['hiding', 'captcha', 'room', 'conditions', 'bouncy']
+    options = ['hiding', 'captcha', 'room', 'conditions', 'bouncy', 'trivia', 'backwards']
     chosen = random.choice(options)
     if request.method == 'POST':
         num_remaining = int(request.form['remaining']) - 1
