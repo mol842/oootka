@@ -150,7 +150,6 @@ def checkroom(remaining):
 @app.route('/submit_feedback', methods=['POST'])
 def submit_feedback():
     name = request.form['name']
-    email = request.form['email']
     feedback = request.form['feedback']
     
     # Create a filename with the current date and time
@@ -164,7 +163,6 @@ def submit_feedback():
     # Write the feedback to the file
     with open(filepath, 'w') as file:
         file.write(f"Name: {name}\n")
-        file.write(f"Email: {email}\n")
         file.write(f"Feedback:\n{feedback}\n")
     
     return redirect(url_for('start'))
