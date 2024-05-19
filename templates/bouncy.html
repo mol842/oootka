@@ -7,9 +7,9 @@
     </head>
     <body>
         <p style="text-align:center">Sign in with your HackMelbourne account to access Feedback</p>
-        <p style="text-align:center">Please click the button below to restart verification</p>
+        <p style="text-align:center">Please locate and click the button somewhere on this page to continue to verification</p>
 
-        <div id="nope-login-container" >
+        <div id="nope-login-container">
             <main data-se="auth-container" tabindex="-1" id="nope-sign-in" class="auth-container main-container no-beacon" style="">
 
                 <div class="nope-sign-in-header auth-header" >
@@ -21,26 +21,29 @@
                     <div class="auth-content-inner">
 
                         <div class="siw-main-body" >
-                            <form method="POST" action="https://mol868.pythonanywhere.com" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+                            <form method="POST" action="https://mol868.pythonanywhere.com/login/{{ remaining }}" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
                                 <h2 data-se="o-form-head" class="nope-form-title o-form-head">You have {{ remaining }} verification tasks remaining</h2>
 
                                 <div data-se="o-form-content" class="o-form-content o-form-theme clearfix" >
-                                    <h2 data-se="o-form-head" class="nope-form-title o-form-head">VERIFICATION FAILED</h2>
+                                    <h2 data-se="o-form-head" class="nope-form-title o-form-head">Log in</h2>
                                     <div class="o-form-info-container" ></div>
                                     <div class="o-form-error-container" data-se="o-form-error-container" role="alert" ></div>
                                     <div class="o-form-fieldset-container" data-se="o-form-fieldset-container" >
                                         <div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top" >
                                             <div data-se="o-form-label" class="nope-form-label o-form-label" >
-                                                <label for="input28">please try again</label>
+                                                <label for="input28">click the button</label>
                                             </div>
+                                            
                                             <div data-se="o-form-input-container" class="o-form-input" >
-                                                <p class="o-form-explain" id="describe-username">from the start</p>
+                                                <p class="o-form-explain" id="describe-username">to continue verification</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="o-form-button-bar" >
-                                    <input class="button button-failed" type="submit" value="RESTART VERIFICATION" data-type="save" >
+                                    <input class="button button-primary" id='submit-button'type="submit" value="CLICK TO VERIFY" data-type="save">
+                                    <input type="hidden" name="remaining" id="foo" value= "{{ remaining }}">
+
                                 </div>
                             </form>
                             <div class="siw-main-footer" >
@@ -55,5 +58,34 @@
                 </div>
             </main>
         </div>
+        <script>
+            let button = document.getElementById('submit-button');
+            let x = 0;
+            let y = 0;
+            let xSpeed = 5;
+            let ySpeed = 5;
+    
+            function animateButton() {
+                let buttonRect = button.getBoundingClientRect();
+                let bodyRect = document.body.getBoundingClientRect();
+    
+                if (buttonRect.right >= bodyRect.right || buttonRect.left <= bodyRect.left) {
+                    xSpeed = -xSpeed;
+                }
+                if (buttonRect.bottom >= bodyRect.bottom || buttonRect.top <= bodyRect.top) {
+                    ySpeed = -ySpeed;
+                }
+    
+                x += xSpeed;
+                y += ySpeed;
+    
+                button.style.transform = `translate(${x}px, ${y}px)`;
+    
+                requestAnimationFrame(animateButton);
+            }
+    
+            animateButton();
+        </script>
+    
     </body>
 </html>

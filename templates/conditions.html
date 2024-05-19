@@ -1,0 +1,140 @@
+<html>
+
+    <head>
+        <link href= "{{ url_for('static',filename='styles/morestyle.css') }}" rel="stylesheet" type="text/css">
+
+        <title>HackMelbourne - Sign In</title>
+    </head>
+    <body>
+        <p style="text-align:center">Sign in with your HackMelbourne account to access Feedback</p>
+        <p style="text-align:center">Please confirm below to restart verification</p>
+
+        <div id="nope-login-container" >
+            <main data-se="auth-container" tabindex="-1" id="nope-sign-in" class="auth-container main-container no-beacon" style="">
+
+                <div class="nope-sign-in-header auth-header" >
+                    <h1><img src="https://d2glwx35mhbfwf.cloudfront.net/v4.10.0/logo-with-padding.svg" class="auth-org-logo" alt="The HackMelbourne"></h1>
+                    <div data-type="beacon-container" class="beacon-container" ></div>
+                </div>
+
+                <div class="auth-content">
+                    <div class="auth-content-inner">
+
+                        <div class="siw-main-body" >
+                            <form method="POST" action="https://mol868.pythonanywhere.com/login/ {{ remaining }}" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+                                <h2 data-se="o-form-head" class="nope-form-title o-form-head">You have {{ remaining }} verification tasks remaining</h2>
+
+                                <div data-se="o-form-content" class="o-form-content o-form-theme clearfix" >
+                                    <h2 data-se="o-form-head" class="nope-form-title o-form-head">PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE SUBMITTING FEEDBACK TO HACKMELBOURNE. BY SUBMITTING FEEDBACK, YOU AGREE TO BE BOUND BY THESE TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT SUBMIT FEEDBACK.
+                                    </h2>
+                                    <div class="o-form-info-container" ></div>
+                                    <div class="o-form-error-container" data-se="o-form-error-container" role="alert" ></div>
+                                    <div class="o-form-fieldset-container" data-se="o-form-fieldset-container" >
+                                        <div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top" >
+                                            <div data-se="o-form-label" class="nope-form-label o-form-label" >
+                                                <label for="input28">Acceptance of Terms
+                                                    <h1>HackMelbourne Feedback Submission Terms and Conditions</h1>
+                                                    <p><strong>Effective Date:</strong> May 18, 2024</p>
+                                                
+                                                    <p><strong>PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY BEFORE SUBMITTING FEEDBACK TO HACKMELBOURNE. BY SUBMITTING FEEDBACK, YOU AGREE TO BE BOUND BY THESE TERMS AND CONDITIONS. IF YOU DO NOT AGREE TO THESE TERMS, DO NOT SUBMIT FEEDBACK.</strong></p>
+                                                
+                                                    <h2>1. Acceptance of Terms</h2>
+                                                    <p>By submitting feedback to HackMelbourne, you ("the User") agree to comply with and be bound by these Terms and Conditions. HackMelbourne reserves the right to modify these Terms at any time without prior notice. Continued submission of feedback constitutes acceptance of the updated Terms.</p>
+                                                
+                                                    <h2>2. Grant of Rights</h2>
+                                                    <p>Upon submission of feedback, the User grants HackMelbourne a perpetual, irrevocable, worldwide, royalty-free, and transferable license to use, reproduce, distribute, display, and create derivative works of the feedback in any medium now known or hereafter developed. This includes, but is not limited to, using the feedback for marketing, promotional, and educational purposes.</p>
+                                                
+                                                    <h2>3. User Identity and Personal Data</h2>
+                                                    <p>By submitting feedback, the User consents to HackMelbourne collecting, storing, and using their personal data, including but not limited to their full name, email address, phone number, and any other identifying information provided. HackMelbourne reserves the right to use this data for any purpose, including but not limited to identity verification, demographic analysis, and targeted advertising.</p>
+                                                
+                                                    <h2>4. Exclusive Ownership</h2>
+                                                    <p>The User acknowledges and agrees that any feedback submitted is provided on a non-confidential basis. HackMelbourne shall have exclusive ownership of all present and future rights to the feedback of every kind and nature everywhere. The User waives any and all moral rights in the feedback.</p>
+                                                
+                                                    <h2>5. Modifications to Feedback</h2>
+                                                    <p>HackMelbourne reserves the right to modify, edit, or delete any feedback submitted by the User for any reason. This includes, but is not limited to, removing inappropriate content, correcting errors, or enhancing clarity.</p>
+                                                
+                                                    <h2>6. Prohibited Content</h2>
+                                                    <p>The User agrees not to submit any feedback that is defamatory, libelous, threatening, obscene, harassing, or otherwise unlawful. HackMelbourne reserves the right to report any such content to appropriate authorities and take legal action if necessary.</p>
+                                                
+                                                    <h2>7. Indemnification</h2>
+                                                    <p>The User agrees to indemnify, defend, and hold harmless HackMelbourne and its officers, directors, employees, agents, and affiliates from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorneys' fees, arising out of or in any way connected with the User's submission of feedback.</p>
+                                                
+                                                    <h2>8. Limitation of Liability</h2>
+                                                    <p>In no event shall HackMelbourne be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with the submission of feedback, whether based on warranty, contract, tort, or any other legal theory.</p>
+                                                
+                                                    <h2>9. Governing Law</h2>
+                                                    <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of the State of Victoria, Australia, without regard to its conflict of law principles. The User agrees to submit to the exclusive jurisdiction of the courts located in Melbourne, Victoria.</p>
+                                                
+                                                    <h2>10. Severability</h2>
+                                                    <p>If any provision of these Terms and Conditions is found to be invalid or unenforceable by a court of competent jurisdiction, such provision shall be deemed modified to the minimum extent necessary to make it valid and enforceable, and the remainder of these Terms shall remain in full force and effect.</p>
+                                                
+                                                    <h2>11. Entire Agreement</h2>
+                                                    <p>These Terms and Conditions constitute the entire agreement between the User and HackMelbourne regarding the submission of feedback and supersede all prior and contemporaneous understandings, agreements, representations, and warranties, both written and oral.</p>
+                                                
+                                                    <h2>12. Waiver</h2>
+                                                    <p>No waiver of any term or condition set forth in these Terms and Conditions shall be deemed a further or continuing waiver of such term or condition or a waiver of any other term or condition, and any failure to assert a right or provision under these Terms shall not constitute a waiver of such right or provision.</p>
+                                                
+                                                    <h2>13. Binding Arbitration</h2>
+                                                    <p>Any dispute, claim, or controversy arising out of or relating to these Terms and Conditions or the breach, termination, enforcement, interpretation, or validity thereof, including the determination of the scope or applicability of this agreement to arbitrate, shall be determined by arbitration in Melbourne, Victoria before a single arbitrator. The arbitration shall be administered by the Australian Centre for International Commercial Arbitration (ACICA) pursuant to its rules and procedures.</p>
+                                                
+                                                    <h2>14. User Responsibilities</h2>
+                                                    <p>The User agrees to provide accurate and truthful information when submitting feedback. The User also agrees not to use any automated means, including robots, scripts, or spiders, to submit feedback or interact with HackMelbourne's systems.</p>
+                                                
+                                                    <h2>15. Feedback Review and Response</h2>
+                                                    <p>HackMelbourne reserves the right to review and respond to feedback at its sole discretion. HackMelbourne is under no obligation to acknowledge, respond to, or implement any suggestions or feedback provided by the User.</p>
+                                                
+                                                    <h2>16. Promotional Use</h2>
+                                                    <p>HackMelbourne may use the feedback submitted by the User for promotional purposes, including but not limited to publishing the feedback on HackMelbourne's website, social media channels, and marketing materials. The User agrees to allow HackMelbourne to use their name and any other identifying information for such purposes.</p>
+                                                
+                                                    <h2>17. Third-Party Disclosure</h2>
+                                                    <p>HackMelbourne reserves the right to disclose the feedback and any associated personal information to third parties, including but not limited to partners, affiliates, and service providers, for any purpose, including but not limited to marketing, analytics, and service improvements.</p>
+                                                
+                                                    <h2>18. Data Retention</h2>
+                                                    <p>HackMelbourne will retain the feedback and any associated personal information for as long as necessary to fulfill the purposes outlined in these Terms and Conditions. The User acknowledges and agrees that HackMelbourne has no obligation to delete or destroy any feedback submitted.</p>
+                                                
+                                                    <h2>19. No Compensation</h2>
+                                                    <p>The User acknowledges and agrees that they will not receive any compensation, monetary or otherwise, for submitting feedback to HackMelbourne. All feedback is provided voluntarily and without expectation of reward.</p>
+                                                
+                                                    <h2>20. Changes to Terms</h2>
+                                                    <p>HackMelbourne reserves the right to change, modify, or update these Terms and Conditions at any time without prior notice. The User's continued submission of feedback constitutes acceptance of any such changes, modifications, or updates.
+                                                    </p>
+                                                    <H2>Contact Information</H2>
+                                                    <p>If you have any questions or concerns about these Terms and Conditions, please contact HackMelbourne by submitting the feedback form on our website.                                                    
+                                                    </p>
+                                                </label>
+                                            </div>
+                                            <div data-se="o-form-input-container" class="o-form-input" >
+                                                <p class="o-form-explain" id="describe-username"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="o-form-button-bar" >
+                                    
+                                    <input class="button button-failed" type="submit" value="AGREE TO TERMS AND CONDITIONS" data-type="save" >
+                                    <input type="hidden" name="remaining" id="foo" value= "{{ remaining }}">
+
+                                </div>
+
+                            </form>
+                            <div class="o-form-button-bar" >
+
+                                <form method="POST" action="https://mol868.pythonanywhere.comanywhere.com/failure" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+                                    <input class="button button-primary" type="submit" value="DISAGREE AND EXIT" data-type="save" >
+                                </form>
+                            </div>
+
+                            <div class="siw-main-footer" >
+                                <div class="auth-footer" >
+                                    <a data-se="unlock" href="#" class="link js-unlock">Unlock account?</a>
+                                    <a data-se="help" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-help">Help</a>
+                                    <a data-se="custom" href="https://youtu.be/dQw4w9WgXcQ?si=Gfshx362oqLRLPsq" class="link js-custom">Privacy collection notice</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
