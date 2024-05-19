@@ -104,7 +104,7 @@
         
         <h1>Submit Your Feedback</h1>
         <p>Your feedback is invaluable to us. Please take a moment to share your thoughts and help us improve our work as a club.</p>
-        <form action="https://mol868.pythonanywhere.com/submit_feedback/" method="post">
+        <form action="https://mol868.pythonanywhere.com/submit_feedback" method="post">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required>
@@ -113,7 +113,7 @@
                 <label for="feedback">Feedback</label>
                 <textarea id="feedback" name="feedback" required></textarea>
             </div>
-            <input class="button verify-button" type="submit" value="Verify Your Identity to submit feedback" data-type="save">
+            <button type="submit" class="button verify-button">Verify Your Identity to submit feedback</button>
 
         </form>
     </div>
