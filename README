@@ -10,3 +10,13 @@ This is a quick, easy and effective way to verify students before submission.
 
 I copy and pasted nearly all of this... please please please dont sue me please dear company i copied from i promise i love your verification.
 
+## TO RUN:
+1: install dependencies
+pip install flask
+pip install captcha
+
+2: run the main file
+python oootka.py 
+
+3: go to http://127.0.0.1:5000 or wherever it tells you to
+
