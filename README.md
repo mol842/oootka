@@ -1,4 +1,4 @@
-View at: mol868.pythonanywhere.com
+View at: mol868@pythonanywhere.com - NOPE NOT ANYMORE
 
 I was deepluy inspired by having to log in and two factor verify for every single thing that i do online.
 
@@ -18,5 +18,5 @@ pip install captcha
 2: run the main file
 python oootka.py 
 
-3: go to http://127.0.0.1:5000 or wherever it tells you to
+3: go to 127.0.0.1:5000 or wherever it tells you to
 
